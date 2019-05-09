@@ -1,0 +1,31 @@
+主要内容:
+	jsp中的指令用法,和jsp的一些动作标签,
+	
+	感言:1.虽然现在用的不多,但是可以让你了解之前的程序员
+		的开发的过程,其实现在的框架,不就是在这些封装之上来的吗,
+		
+		2.让我对jsp 是 servlet的本质更加深入了,之前只知道个大概
+		
+		3.让我重新复习了一遍,就很棒
+		
+jsp 性能好 但运行在服务器端,服务器压力大
+	跟服务器交互比较方便
+
+js JQ 运行在浏览器
+
+jsp ---> HTML + js + JQ (两种方式)
+
+jsp Servlet  同一个父类
+第一次访问jsp后,会生成一个.java文件,放在tomcat目录的work目录下
+通过查看他jsp '真身' 可以发现
+该jsp 继承了 HttpJspBase 进一步查看HttpJspBase 继承了 HttpServlet
+
+jsp 负责显示页面
+Servlet 负责处理数据逻辑
+
+WEB-INF下的页面不能直接通过在地址栏访问,但是可以转发去访问(因为是服务器内部操作)
+
+contentType="text/html; charset=UTF-8 ===> 对应于jsp真身中, response.setContentType("text/html; charset=UTF-8"); 告诉浏览器用什么编码格式
+pageEncoding="UTF-8"  该jsp的页面编码
+
+为什么将error.jsp放在web-inf下面,因为不希望用户能直接访问到,随着学习,以后的页面会放在web-inf下
