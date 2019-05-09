@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--有网的话可以使用cdn的jq: http://www.jq22.com/cdn/ -->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+	<!--使用按钮提交:可以省略form标签 和 button中type=submit -->
+	username:<input type="text" id="user"><br/>
+	password:<input type="password" id="pwd"><br/>
+	<button id="btn">login</button>
+</body>
+<script type="text/javascript">
+	$(function(){
+		/*
+			如果使用servlet+html(ajax)的话===>请求servlet====>返回json字符串给该页面处理
+		*/
+		$("#btn").click(function(){
+			$.ajax({
+				url:"/webDemo/LoginServlet",
+				type:"POST",
+				dataType:"json",
+				data:{username:$("#user").val(),password:$("#pwd").val()},
+				success:function(data){
+					//将json对象转换为json字符串
+					var result = JSON.stringify(data);
+					alert(result);
+					
+				}
+			});
+		});
+	});
+</script>
+</html>

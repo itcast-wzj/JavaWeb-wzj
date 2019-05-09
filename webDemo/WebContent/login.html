@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>登录页面</h1>
+	<!--如果使用servlet+jsp的话：页面==>servlet==>可以保存到域对象,然后转发/重定向另一个页面===>然后从域对象中取出来显示 -->
+	<form action="/webDemo/LoginServlet" method="post">
+		username:<input type="text" name="username" /><br/> 
+		password:<input type="password" name="password" /><br/> 
+		<input type="submit" value="登录">
+	</form>
+</body>
+</html>
